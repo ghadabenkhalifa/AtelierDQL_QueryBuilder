@@ -1,0 +1,26 @@
+
+{# <h1> Créer une nouvelle classe </h1>
+{{ form(formCreate) }} #}
+<html>
+<head>
+  <link rel= "stylesheet" href="{{asset('css/style.css')}}" type = "text/css">
+</head>
+<body>
+<h1> Créer une nouvelle classe </h1>
+{{ form_start(formCreate, {'attr': {'class': 'row'}}) }} {# générer <form> avec ses attributs #}
+
+<div>
+    {{ form_label(formCreate.name) }} {# Affiche le label d'un champ #}
+    {# {{ form_label(formCreate.name, 'nom') }} #}
+    {{ form_widget(formCreate.name, {'attr': {'placeholder': 'Nom du la classe'}}) }}
+
+  {#  {{ form_row(formCreate.name) }}#}
+</div>
+
+<div>
+   {{ form_widget(formCreate.ajouter, {'attr': {'class': 'myButton'}}) }}
+</div>
+{{ form_end(formCreate) }} {# générer </form> #}
+
+</body>
+</html>

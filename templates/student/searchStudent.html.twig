@@ -1,5 +1,5 @@
+<h1>Liste des étudiants</h1>
 {{ form(formsearch) }}
-<h1>List of Student</h1>
 <table border="1">
     <tr>
         <td>NSC</td>
@@ -7,7 +7,7 @@
         <td>Classe</td>
         <td>Action</td>
     </tr>
-    {% for student in students %}
+    {% for student in resultOfSearch %}
         <tr>
             <td>{{ student.nsc }}</td>
             <td>{{ student.email }}</td>
@@ -18,13 +18,4 @@
         </tr>
     {% endfor %}
 </table>
-
-   {% for club in clubs %}
-       <h1>Detail of {{ club.ref }}</h1>
-       <ul>
-            <li>Date of creation:  {{ club.creationDate|date }} </li>
-           <li>Price:  {{ club.price }}</li>
-           <li>Enabled: {{ club.enabled }}</li>
-       </ul>
-   {% endfor %}
-</table>
+<a href="{{ path('addStudent') }}">Add Student</a>

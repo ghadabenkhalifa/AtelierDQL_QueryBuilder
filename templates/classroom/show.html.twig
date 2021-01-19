@@ -1,5 +1,6 @@
-{{ form(formsearch) }}
-<h1>List of Student</h1>
+<h4>Classroom:#{{ classroom.id }}_{{ classroom.name }}</h4>
+
+<h4>Students of {{ classroom.name }}</h4>
 <table border="1">
     <tr>
         <td>NSC</td>
@@ -11,20 +12,10 @@
         <tr>
             <td>{{ student.nsc }}</td>
             <td>{{ student.email }}</td>
-            <td>{{ student.classroom.name }}</td>
+            <td>{{ student.classroom }}</td>
             <td><a href="{{ path('updateStudent',{'id':student.nsc}) }}">Update</a>
                 <a href="{{ path('deleteStudent',{'id':student.nsc}) }}">Delete</a>
                 <a href="{{ path('showStudent',{'id':student.nsc}) }}">Show</a></td>
         </tr>
     {% endfor %}
-</table>
-
-   {% for club in clubs %}
-       <h1>Detail of {{ club.ref }}</h1>
-       <ul>
-            <li>Date of creation:  {{ club.creationDate|date }} </li>
-           <li>Price:  {{ club.price }}</li>
-           <li>Enabled: {{ club.enabled }}</li>
-       </ul>
-   {% endfor %}
 </table>

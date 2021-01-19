@@ -1,21 +1,21 @@
-<h1>Liste des étudiants</h1>
+<h1>List of Clubs</h1>
 {{ form(formsearch) }}
 <table border="1">
     <tr>
-        <td>NSC</td>
-        <td>Email</td>
-        <td>Classe</td>
+        <td>REF</td>
+        <td>Creation_Date</td>
+        <td>Price</td>
         <td>Action</td>
     </tr>
-    {% for student in resultOfSearch %}
+    {% for club in clubs %}
         <tr>
-            <td>{{ student.nsc }}</td>
-            <td>{{ student.email }}</td>
-            <td>{{ student.classroom.name }}</td>
-            <td><a href="{{ path('updateStudent',{'id':student.nsc}) }}">Update</a>
-                <a href="{{ path('deleteStudent',{'id':student.nsc}) }}">Delete</a>
-                <a href="{{ path('showStudent',{'id':student.nsc}) }}">Show</a></td>
+            <td>{{ club.ref }}</td>
+            <td>{{ club.creationDate|date }}</td>
+            <td>{{ club.price }}</td>
+            <td><a href="{{ path('updateClub',{'id':club.ref}) }}">Update</a>
+                <a href="{{ path('deleteClub',{'id':club.ref}) }}">Delete</a>
+                <a href="{{ path('showClub',{'id':club.ref}) }}">Show</a></td>
         </tr>
     {% endfor %}
 </table>
-<a href="{{ path('addStudent') }}">Add Student</a>
+<a href="{{ path('addClub') }}">Add Club</a>
