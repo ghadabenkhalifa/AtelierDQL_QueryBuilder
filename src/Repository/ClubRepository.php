@@ -95,7 +95,7 @@ class ClubRepository extends ServiceEntityRepository
     public function findByPriceRange($minValue,$maxValue){
         $entityManager=$this->getEntityManager();
         $query=$entityManager
-            ->createQuery("SELECT c FROM APP\Entity\Club c WHERE c.price >= :minvalue AND c.price <= :maxvalue")
+            ->createQuery("SELECT c FROM APP\Entity\Club c WHERE c.fees >= :minvalue AND c.fees <= :maxvalue")
             ->setParameters(['minvalue'=>$minValue,'maxvalue'=>$maxValue]);
         return $query->getResult();
 
@@ -103,9 +103,9 @@ class ClubRepository extends ServiceEntityRepository
          * solution avec QueryBuilder
          */
         /*$qb= $this->createQueryBuilder('c');
-        $qb ->where('c.price >= :minValue');
+        $qb ->where('c.fees >= :minValue');
         $qb->setParameter('minValue',$minValue);
-        $qb->andWhere('c.price <= :maxValue');
+        $qb->andWhere('c.fees <= :maxValue');
         $qb->setParameter('maxValue',$maxValue);
         return $qb->getQuery()->getResult();*/
     }

@@ -105,14 +105,13 @@ class ClubController extends AbstractController
             $minPrice=(int)$searchForm['minPrice']->getData();
             $maxPrice=(int)$searchForm['maxPrice']->getData();
 
-           // $nsc = $searchForm['minPrice']->getData();
-            $resultOfSearch = $repository->findByPriceRange($minPrice,$maxPrice);
+           $resultOfSearch = $repository->findByPriceRange($minPrice,$maxPrice);
 
             return $this->render('club/searchClub.html.twig', array(
                 'clubs' => $resultOfSearch,
                 'formsearch' => $searchForm->createView()));
         }
-        return $this->render('club/list.html.twig', ['clubs' => $clubs,'formsearch'=>$searchForm->createView()]);
+        return $this->render('club/listPerFees.html.twig', ['clubs' => $clubs,'formsearch'=>$searchForm->createView()]);
     }
 
     /**

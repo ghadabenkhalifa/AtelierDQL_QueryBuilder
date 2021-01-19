@@ -48,23 +48,25 @@ class Club
     /**
      * @return mixed
      */
-    public function getPrice()
+    public function getFees()
     {
-        return $this->price;
+        return $this->fees;
     }
 
     /**
-     * @param mixed $price
+     * @param mixed $fees
      */
-    public function setPrice($price): void
+    public function setFees($fees): void
     {
-        $this->price = $price;
+        $this->fees = $fees;
     }
 
+
+
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
-    private $price;
+    private $fees;
 
     /**
      * @ORM\ManyToMany(targetEntity=Student::class, mappedBy="clubs")
