@@ -11,8 +11,8 @@ class SearchPriceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('minPrice')
-            ->add('maxPrice')
+            ->add('minFees')
+            ->add('maxFees')
         ;
     }
 
