@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 19 jan. 2021 à 10:23
+-- Généré le : mar. 19 jan. 2021 à 16:39
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.4.9
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `club` (
   `ref` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `creation_date` date NOT NULL,
   `enabled` tinyint(1) NOT NULL,
-  `price` int(11) NOT NULL,
+  `fees` double NOT NULL,
   PRIMARY KEY (`ref`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -62,12 +62,12 @@ CREATE TABLE IF NOT EXISTS `club` (
 -- Déchargement des données de la table `club`
 --
 
-INSERT INTO `club` (`ref`, `creation_date`, `enabled`, `price`) VALUES
-('club1', '2020-11-02', 0, 6),
-('club3', '2020-12-10', 1, 5),
-('club4', '2020-12-16', 0, 4),
-('club5', '2020-12-19', 1, 3),
-('club6', '2021-01-01', 0, 3);
+INSERT INTO `club` (`ref`, `creation_date`, `enabled`, `fees`) VALUES
+('club1', '2020-11-02', 0, 5),
+('club3', '2020-12-10', 1, 3),
+('club4', '2020-12-16', 0, 1),
+('club5', '2020-12-19', 1, 4),
+('club6', '2021-01-01', 0, 0);
 
 -- --------------------------------------------------------
 
